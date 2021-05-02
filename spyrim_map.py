@@ -17,7 +17,7 @@ class SpyrimMap:
     #        for col in len(spyrim_map[row]):
     #            print()
 
-if __name__ == '__main__':
-    spyrim_map = SpyrimMap()
-    my_map = spyrim_map.create_map()
-    spyrim_map.print_map(my_map)
+#if __name__ == '__main__':
+#    spyrim_map = SpyrimMap()
+#    my_map = spyrim_map.create_map()
+#    spyrim_map.print_map(my_map)
