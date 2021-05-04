@@ -1,4 +1,7 @@
-from spyrim_map import SpyrimMap
+#from spyrim_map import SpyrimMap
+from beginner_map import BegineerMap
+from expert_map import ExpertMap
+from pro_map import ProMap
 import random
 import argparse
 import sys
@@ -10,15 +13,21 @@ parser.add_argument("-l", "--level", dest="level", default="beginner", type=str,
 
 args = parser.parse_args()
 level = str(args.level)
+
+game_map = None
+
 if level == "beginner":
-    x_border = 15
-    y_border = 15
+    game_map = BegineerMap(15, 15)
+    game_map.create_map()
+    game_map.print_map(game_map.map)
 elif level == "expert":
-    x_border = 20
-    y_border = 20
+    game_map = ExpertMap(20, 20)
+    game_map.create_map()
+    game_map.print_map(game_map.map)
 elif level == "pro":
-    x_border = 30
-    y_border = 30
+    game_map = ProMap(30, 30)
+    game_map.create_map()
+    game_map.print_map(game_map.map)
 else:
     print("Unknown level.") 
     print("Get help with -h or --help.")
@@ -26,11 +35,10 @@ else:
 
 print(f"You have chosen '{level}' level.")
 print("Write 'help' to review the allowed commands.")
-x = random.randint(0, x_border - 1)
-y = random.randint(0, y_border - 1)
 
-spyrimmap = SpyrimMap(x_border, y_border)
-the_map = spyrimmap.create_map()
+x = random.randint(0, game_map.y - 1)
+y = random.randint(0, game_map.x - 1)
+#print(f"{y}-{x}")
 
 def get_position(x, y, the_map):
     for row in range(len(the_map)):
@@ -39,7 +47,7 @@ def get_position(x, y, the_map):
                 if col == x:
                     return the_map[row][col]
 
-#print(f"You are in {get_position(x, y, the_map)}")
+#print(f"You are in {get_position(x, y, game_map.map)}")
 run = True
 while run:
     opt = input("command: ")
@@ -53,25 +61,25 @@ while run:
         print("'go east' - Move a position to the east.")
     else:
         if opt == "go north":
-            if get_position(x, y - 1, the_map) != None:
+            if get_position(x, y - 1, game_map.map) != None:
                 y -= 1
             else:
                 print("You've gotten at the edge north of the map.")
         if opt == "go south":
-            if get_position(x, y + 1, the_map) != None:
+            if get_position(x, y + 1, game_map.map) != None:
                 y += 1
             else:
                 print("You've gotten at the edge south of the map.")
         if opt == "go west":
-            if get_position(x - 1, y, the_map) != None:
+            if get_position(x - 1, y, game_map.map) != None:
                 x -= 1
             else:
                 print("You've gotten at the edge west of the map.")
         if opt == "go east":
-            if get_position(x + 1, y, the_map) != None:
+            if get_position(x + 1, y, game_map.map) != None:
                 x += 1
             else:
                 print("You've gotten at the edge west of the map.")
         
-        print(f"You are in {get_position(x, y, the_map)}")
+        print(f"You are in {get_position(x, y, game_map.map)}")
         
