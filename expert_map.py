@@ -11,7 +11,7 @@ class ExpertMap(SpyrimMap):
         for j in range(super().y):
             self.__map.append([])
             for i in range(super().x):
-                self.__map[j].append(f"{j}-{i}")
+                self.__map[j].append(f"spyrim")
                 
         self.set_ragnar_mountain()
         self.set_frostfall_village()

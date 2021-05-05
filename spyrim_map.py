@@ -37,8 +37,3 @@ class SpyrimMap(object):
         for row in range(len(spyrim_map)):
             print(spyrim_map[row])
     
-
-#if __name__ == '__main__':
-#    spyrim_map = SpyrimMap("begineer")
-#    my_map = spyrim_map.create_map()
-#    spyrim_map.print_map(my_map)
