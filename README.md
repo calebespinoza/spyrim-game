@@ -36,7 +36,7 @@ By default, the game starts with `begineer` level, if you want to change it, you
 ```bash
 $ python3 spyrim.py --level pro
 ```
-In the example above, the biggests map of the game will be charged and the dragons will be placed randomically.
+In the example above, the biggests map of the game will be charged and the **dragons will be placed randomly**.
 
 Run the game with the flag `--help` or `-h` to get more help.
 ```bash
