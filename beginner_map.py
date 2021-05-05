@@ -11,8 +11,8 @@ class BegineerMap(SpyrimMap):
             self.__map.append([])
             for i in range(super().x):
                 self.__map[j].append(f"{j}-{i}")
-                
-        self.set_mountain()
+
+        self.set_ragnar_mountain()
         self.set_frostfall_village()
         self.set_whiterun_village()
         self.set_woods()
@@ -20,16 +20,16 @@ class BegineerMap(SpyrimMap):
         self.set_dragons(4)
         SpyrimMap.map=self.__map
     
-    def set_mountain(self):
-        self.__map[5][7] = "mountain"
-        self.__map[5][8] = "mountain"
-        self.__map[6][6] = "mountain"
-        self.__map[6][7] = "mountain"
-        self.__map[6][8] = "mountain"
-        self.__map[7][6] = "mountain"
-        self.__map[7][7] = "mountain"
-        self.__map[8][7] = "mountain"
-        self.__map[8][8] = "mountain"
+    def set_ragnar_mountain(self):
+        self.__map[5][7] = "ragnar mountain"
+        self.__map[5][8] = "ragnar mountain"
+        self.__map[6][6] = "ragnar mountain"
+        self.__map[6][7] = "ragnar mountain"
+        self.__map[6][8] = "ragnar mountain"
+        self.__map[7][6] = "ragnar mountain"
+        self.__map[7][7] = "ragnar mountain"
+        self.__map[8][7] = "ragnar mountain"
+        self.__map[8][8] = "ragnar mountain"
     
     def set_frostfall_village(self):
         self.__map[1][11] = "frostfall"

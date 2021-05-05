@@ -18,21 +18,17 @@ game_map = None
 
 if level == "beginner":
     game_map = BegineerMap(15, 15)
-    game_map.create_map()
-    game_map.print_map(game_map.map)
 elif level == "expert":
     game_map = ExpertMap(20, 20)
-    game_map.create_map()
-    game_map.print_map(game_map.map)
 elif level == "pro":
     game_map = ProMap(30, 30)
-    game_map.create_map()
-    game_map.print_map(game_map.map)
 else:
     print("Unknown level.") 
     print("Get help with -h or --help.")
     sys.exit(1)
 
+game_map.create_map()
+#game_map.print_map(game_map.map)
 print(f"You have chosen '{level}' level.")
 print("Write 'help' to review the allowed commands.")
 
@@ -59,6 +55,7 @@ while run:
         print("'go south' - Move a position to the south.")
         print("'go west' - Move a position to the west.")
         print("'go east' - Move a position to the east.")
+        print("'exit' - Quit the game.")
     else:
         if opt == "go north":
             if get_position(x, y - 1, game_map.map) != None:
