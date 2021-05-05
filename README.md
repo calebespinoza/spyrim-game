@@ -51,5 +51,6 @@ $ python3 spyrim.py --help
   ![Pro Map](./img/pro_map.png)
 
 ## About the author
-Develop by Caleb Espinoza G.
-DevOps Engineer at Jalasoft SRL.
+Develop by:
+
+**Caleb Espinoza G.** | DevOps Engineer at Jalasoft SRL.
