@@ -1,5 +1,5 @@
 pipeline {
-    agent None
+    agent { label 'automation' }
     stages {
         stage ('Static Code Analysis') {
             steps {
