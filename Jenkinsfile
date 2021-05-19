@@ -5,8 +5,8 @@ pipeline {
             steps {
                 script {
                     def scannerHome = tool 'sonarqube-scanner-at'
-                    withSonarQubeEnv('sonarqube-automation') { // If you have configured more than one global server connection, you can specify its name
-                        sh "${scannerHome}/bin/sonar-scanner -Dsonar.projectName=spyrim-game"
+                    withSonarQubeEnv('sonarqube-automation') {
+                        sh "${scannerHome}/bin/sonar-scanner -Dsonar.projectName=spyrim-game -Dsonar.projectKey=spyrim-game -Dsonar.sources=."
                     }
                 }
             }
